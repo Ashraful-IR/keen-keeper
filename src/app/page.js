@@ -1,4 +1,3 @@
-import friends from "@/public/friends.json";
 import HomePage from "./Home/page";
 
 // const friendsDetails = async() => {
