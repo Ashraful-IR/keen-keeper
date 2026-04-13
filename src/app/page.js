@@ -1,5 +1,11 @@
-import Image from "next/image";
+import friends from "@/public/friends.json";
 import HomePage from "./Home/page";
+
+// const friendsDetails = async() => {
+//     const response = await fetch("/friends.json");
+//     const data = await response.json();
+//     return data;
+// };
 
 export default function Home() {
   return (

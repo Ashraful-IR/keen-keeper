@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Arafat Rahman",
+    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "email": "arafat.rahman@gmail.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["university", "roommate"],
+    "bio": "Met during first year at AIUB. Used to work on coding assignments together and share late-night study sessions.",
+    "goal": 14,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 2,
+    "name": "Nusrat Jahan",
+    "picture": "https://randomuser.me/api/portraits/women/45.jpg",
+    "email": "nusrat.jahan@gmail.com",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["college", "close friend"],
+    "bio": "Close friend since college days. Regularly catch up over phone calls and discuss career plans.",
+    "goal": 14,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 3,
+    "name": "Tanvir Hasan",
+    "picture": "https://randomuser.me/api/portraits/men/51.jpg",
+    "email": "tanvir.hasan@gmail.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["office", "project partner"],
+    "bio": "Worked together on a software project. Still collaborate occasionally on freelance ideas and tech discussions.",
+    "goal": 10,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 4,
+    "name": "Mitu Akter",
+    "picture": "https://randomuser.me/api/portraits/women/68.jpg",
+    "email": "mitu.akter@gmail.com",
+    "days_since_contact": 20,
+    "status": "overdue",
+    "tags": ["university", "special"],
+    "bio": "Met at university. Shares a strong emotional bond and meaningful conversations about life and future goals.",
+    "goal": 10,
+    "next_due_date": "2026-04-01"
+  },
+  {
+    "id": 5,
+    "name": "Sabbir Hossain",
+    "picture": "https://randomuser.me/api/portraits/men/77.jpg",
+    "email": "sabbir.hossain@gmail.com",
+    "days_since_contact": 9,
+    "status": "on-track",
+    "tags": ["school", "football buddy"],
+    "bio": "School friend and regular football teammate. Meet occasionally on weekends for matches and hangouts.",
+    "goal": 14,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 6,
+    "name": "Farzana Ahmed",
+    "picture": "https://randomuser.me/api/portraits/women/23.jpg",
+    "email": "farzana.ahmed@gmail.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["family friend", "mentor"],
+    "bio": "Family friend who guided me in academic decisions and career planning. Always supportive and insightful.",
+    "goal": 14,
+    "next_due_date": "2026-04-15"
+  }
+]

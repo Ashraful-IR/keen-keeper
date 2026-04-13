@@ -19,19 +19,19 @@ const NavbarPage = () => {
       <div className="flex justify-end gap-5 ">
         <Link
           href="/"
-          className={`link ${pathname === "/" ? 'text-white bg-emerald-900 px-3 py-0.5 no-underline' : ''} text-gray-400 font-extralight text-[16px] no-underline flex items-center gap-1 `}
+          className={`link ${pathname === "/" ? 'text-white bg-emerald-900 px-3 py-0.5 no-underline rounded-md' : ''} text-gray-400 font-extralight text-[16px] no-underline flex items-center gap-1 `}
         >
           <GoHome size={16} />Home
         </Link>
         <Link
           href="/Timeline"
-          className={`link ${pathname === "/Timeline" ? 'text-white bg-emerald-900 px-3 py-0.5 no-underline' : ''} text-gray-400 font-extralight text-[16px] no-underline flex items-center gap-1 `}
+          className={`link ${pathname === "/Timeline" ? 'text-white bg-emerald-900 px-3 py-0.5 no-underline rounded-md' : ''} text-gray-400 font-extralight text-[16px] no-underline flex items-center gap-1 `}
         >
          <RiTimeLine size={16} />Timeline
         </Link>
         <Link
           href="/Stats"
-          className={`link ${pathname === "/Stats" ? 'text-white bg-emerald-900 px-3 py-0.5 no-underline' : ''} text-gray-400 font-extralight text-[16px] no-underline flex items-center gap-1 `}
+          className={`link ${pathname === "/Stats" ? 'text-white bg-emerald-900 px-3 py-0.5 no-underline rounded-md' : ''} text-gray-400 font-extralight text-[16px] no-underline flex items-center gap-1 `}
         >
           <ImStatsDots size={16} />Stats
         </Link>
