@@ -1,43 +1,76 @@
+"use client";
+import CardPage from "@/component/UI/Card/page";
+import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
 const HomePage = () => {
+  const [friendsDetails, setFriendsDetails] = useState([]);
+
+  useEffect(() => {
+    const fetchFriendsDetails = async () => {
+      const response = await fetch("/friends.json");
+      const data = await response.json();
+      setFriendsDetails(data);
+      console.log(data);
+    };
+    fetchFriendsDetails();
+  }, []);
   return (
-    <div>
-      <div className="flex flex-col justify-between items-center gap-3">
-        <h1 className="text-black text-5xl font-bold">
+    <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center gap-3 text-center">
+        <h1 className="text-black text-4xl mt-5 sm:text-4xl lg:text-5xl font-bold leading-tight">
           Friends to keep close in your life
         </h1>
-        <p className="text-gray-600 mt-4 mb-6 text-center text-[16px]">
+        <p className="text-gray-600 mt-2 mb-4 sm:mb-6 text-sm sm:text-base max-w-2xl">
           Your personal shelf of meaningful connections. Browse, tend, and
-          nurture the
-          <br />
+          nurture the <br className="hidden sm:block" />
           relationships that matter most.
         </p>
-        <button className="btn bg-emerald-900 text-white font-semibold text-[14px]">
+        <button className="btn bg-emerald-900 text-white font-semibold text-sm w-auto sm:w-auto">
           <FaPlus /> Add a Friend
         </button>
       </div>
-      <div className="flex justify-between items-baseline gap-4 mt-10">
-        <div className="flex flex-col items-center justify-center gap-2 bg-white shadow p-4 rounded-lg w-90 h-35">
-          <h2 className="text-black text-2xl font-bold">10</h2>
+      <div className="grid grid-cols-1 gap-4 mt-8 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-col items-center justify-center gap-2 bg-white shadow p-4 rounded-lg w-full min-h-35">
+          <h2 className="text-black text-2xl font-bold">
+            {friendsDetails.length}
+          </h2>
           <p className="text-gray-600">Total Friends</p>
         </div>
-        <div className="flex flex-col items-center justify-center gap-2 bg-white shadow p-4 rounded-lg w-90 h-35">
-          <h2 className="text-black text-2xl font-bold">5</h2>
+        <div className="flex flex-col items-center justify-center gap-2 bg-white shadow p-4 rounded-lg w-full min-h-35">
+          <h2 className="text-black text-2xl font-bold">
+            {
+              friendsDetails.filter((friend) => friend.status === "on-track")
+                .length
+            }
+          </h2>
           <p className="text-gray-600">On Track</p>
         </div>
-        <div className="flex flex-col items-center justify-center gap-2 bg-white shadow p-4 rounded-lg w-90 h-35">
-          <h2 className="text-black text-2xl font-bold">3</h2>
+        <div className="flex flex-col items-center justify-center gap-2 bg-white shadow p-4 rounded-lg w-full min-h-35">
+          <h2 className="text-black text-2xl font-bold">
+            {
+              friendsDetails.filter((friend) => friend.status === "overdue")
+                .length
+            }
+          </h2>
           <p className="text-gray-600">Need Attention</p>
         </div>
-        <div className="flex flex-col items-center justify-center gap-2 bg-white shadow p-4 rounded-lg w-90 h-35">
-          <h2 className="text-black text-2xl font-bold">2</h2>
+        <div className="flex flex-col items-center justify-center gap-2 bg-white shadow p-4 rounded-lg w-full min-h-35">
+          <h2 className="text-black text-2xl font-bold">
+            {
+              friendsDetails.filter((friend) => friend.status === "almost due")
+                .length
+            }
+          </h2>
           <p className="text-gray-600">Interactions This Month</p>
         </div>
       </div>
-      <p className="text-black text-lg font-bold mt-4 mb-6 text-[22px]">
+      <p className="text-black font-bold mt-6 mb-4 text-xl sm:text-2xl">
         Your Friends
       </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-5 gap-4 sm:gap-5">
+        <CardPage friendsDetails={friendsDetails} />
+      </div>
     </div>
   );
 };

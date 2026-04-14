@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Arafat Rahman",
-    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "picture": "https://i.ibb.co.com/Kch0BNVb/close-up-portrait-curly-handsome-european-male-176532-8133.avif",
     "email": "arafat.rahman@gmail.com",
     "days_since_contact": 18,
     "status": "overdue",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "name": "Nusrat Jahan",
-    "picture": "https://randomuser.me/api/portraits/women/45.jpg",
+    "picture": "https://i.ibb.co.com/s92f5vbP/images-1.jpg",
     "email": "nusrat.jahan@gmail.com",
     "days_since_contact": 12,
     "status": "almost due",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "name": "Tanvir Hasan",
-    "picture": "https://randomuser.me/api/portraits/men/51.jpg",
+    "picture": "https://i.ibb.co.com/jPHwZH0Y/download-1.jpg",
     "email": "tanvir.hasan@gmail.com",
     "days_since_contact": 5,
     "status": "on-track",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "name": "Mitu Akter",
-    "picture": "https://randomuser.me/api/portraits/women/68.jpg",
+    "picture": "https://i.ibb.co.com/5Ww3zRrp/images.jpg",
     "email": "mitu.akter@gmail.com",
     "days_since_contact": 20,
     "status": "overdue",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "name": "Sabbir Hossain",
-    "picture": "https://randomuser.me/api/portraits/men/77.jpg",
+    "picture": "https://i.ibb.co.com/NgJQk649/download.jpg",
     "email": "sabbir.hossain@gmail.com",
     "days_since_contact": 9,
     "status": "on-track",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "name": "Farzana Ahmed",
-    "picture": "https://randomuser.me/api/portraits/women/23.jpg",
+    "picture": "https://i.ibb.co.com/QjqqJ9HJ/download-2.jpg",
     "email": "farzana.ahmed@gmail.com",
     "days_since_contact": 13,
     "status": "almost due",
