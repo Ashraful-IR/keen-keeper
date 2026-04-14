@@ -103,18 +103,17 @@ const FriendsDetails = async ({ params }) => {
               <p className="text-gray-600">Next Due Date</p>
             </div>
           </div>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white shadow rounded-2xl p-4 w-full min-h-35">
+          <div className="flex flex-col sm:flex-row items-start sm:items-start justify-between gap-3 bg-white shadow rounded-2xl p-4 w-full min-h-35">
             <div className="flex flex-col justify-between items-start gap-5">
               <h3 className="text-lg font-bold text-emerald-800 mb-2">
                 Realationship Goal
               </h3>
               <p className="text-gray-600 text-[14px] opacity-80 font-extralight">
-                Coonect Every{" "}
-                <span className="font-bold text-black">{friend.goal} Days</span>
+                Coonect Every <span className="font-bold text-black">{friend.goal} Days</span>
               </p>
             </div>
-            <div className="text-black text-sm font-medium">
-              <p>Edit</p>
+            <div className="text-black text-sm font-medium ">
+              <p className="btn">Edit</p>
             </div>
           </div>
           <div className="flex flex-col items-start justify-between gap-3 bg-white shadow rounded-2xl p-4 w-full min-h-35">
