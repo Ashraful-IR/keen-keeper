@@ -2,9 +2,11 @@
 import CardPage from "@/component/UI/Card/page";
 import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
+import { ClimbingBoxLoader } from "react-spinners";
 
 const HomePage = () => {
   const [friendsDetails, setFriendsDetails] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchFriendsDetails = async () => {
@@ -12,11 +14,12 @@ const HomePage = () => {
       const data = await response.json();
       setFriendsDetails(data);
       console.log(data);
+      setIsLoading(false);
     };
     fetchFriendsDetails();
   }, []);
   return (
-    <div className="w-full px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col items-center gap-3 text-center">
         <h1 className="text-black text-4xl mt-5 sm:text-4xl lg:text-5xl font-bold leading-tight">
           Friends to keep close in your life
@@ -69,7 +72,13 @@ const HomePage = () => {
         Your Friends
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-5 gap-4 sm:gap-5">
-        <CardPage friendsDetails={friendsDetails} />
+        {isLoading ? (
+          <div className="flex items-center justify-center col-span-full">
+            <ClimbingBoxLoader color="#004f3b" />
+          </div>
+        ) : (
+          <CardPage friendsDetails={friendsDetails} />
+        )}
       </div>
     </div>
   );
