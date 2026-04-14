@@ -1,11 +1,14 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Bounce, toast } from "react-toastify";
 
 const CardPage = ({ friendsDetails }) => {
+  const router = useRouter();
   const friends = friendsDetails;
+
   const handleClick = (friend) => {
-    console.log("Card clicked!");
-    toast.success(`${friend.name} details displayed!`, {
+    router.push(`/Details/${friend.id}`);
+    toast.success(`${friend.name} details is shown`, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -17,6 +20,7 @@ const CardPage = ({ friendsDetails }) => {
       transition: Bounce,
     });
   };
+
   return (
     <>
       {friends.map((friend) => (
