@@ -124,19 +124,19 @@ const FriendsDetails = async ({ params }) => {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-3 w-full">
               <div className="btn h-full flex flex-col items-center justify-between gap-2 shadow rounded-2xl text-black text-center font-normal w-full p-4 bg-amber-50">
-                <BiPhoneCall />
+                <BiPhoneCall size={25} />
                 <p className="text-gray-600 text-center text-[14px] opacity-80 font-extralight">
                   Call
                 </p>
               </div>
               <div className="btn h-full flex flex-col items-center justify-between gap-2 shadow rounded-2xl text-black text-center font-normal w-full p-4 bg-amber-50">
-                <MdOutlineTextsms />
+                <MdOutlineTextsms size={25} />
                 <p className="text-gray-600 text-center text-[14px] opacity-80 font-extralight">
                   Text
                 </p>
               </div>
               <div className="btn h-full col-span-2 sm:col-span-1 flex flex-col items-center justify-between gap-2 shadow rounded-2xl text-black text-center font-normal w-full p-4 bg-amber-50">
-                <IoVideocamOutline />
+                <IoVideocamOutline size={25} />
                 <p className="text-gray-600 text-center text-[14px] opacity-80 font-extralight">
                   Video
                 </p>
