@@ -6,6 +6,7 @@ import { MdOutlineDeleteOutline, MdOutlineTextsms } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
 import { FaHistory } from "react-icons/fa";
 import { IoVideocamOutline } from "react-icons/io5";
+import QuickCheckInActions from "./QuickCheckInActions";
 
 const FriendsDetails = async ({ params }) => {
   const { friendsdetails } = await params;
@@ -60,6 +61,10 @@ const FriendsDetails = async ({ params }) => {
                   </span>
                 ))}
               </div>
+
+              <p className="text-black mt-1 mb-2 px-2 sm:px-5 text-center text-[14px]  font-semibold">
+                Email: {friend.email}
+              </p>
               <p className="text-gray-600 mt-1 mb-2 px-2 sm:px-5 text-center text-[14px] opacity-80 font-extralight italic">
                 {friend.bio}
               </p>
@@ -109,7 +114,8 @@ const FriendsDetails = async ({ params }) => {
                 Realationship Goal
               </h3>
               <p className="text-gray-600 text-[14px] opacity-80 font-extralight">
-                Coonect Every <span className="font-bold text-black">{friend.goal} Days</span>
+                Coonect Every{" "}
+                <span className="font-bold text-black">{friend.goal} Days</span>
               </p>
             </div>
             <div className="text-black text-sm font-medium ">
@@ -122,26 +128,7 @@ const FriendsDetails = async ({ params }) => {
                 Quick Check-In
               </h3>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-3 w-full">
-              <div className="btn h-full flex flex-col items-center justify-between gap-2 shadow rounded-2xl text-black text-center font-normal w-full p-4 bg-amber-50">
-                <BiPhoneCall size={25} />
-                <p className="text-gray-600 text-center text-[14px] opacity-80 font-extralight">
-                  Call
-                </p>
-              </div>
-              <div className="btn h-full flex flex-col items-center justify-between gap-2 shadow rounded-2xl text-black text-center font-normal w-full p-4 bg-amber-50">
-                <MdOutlineTextsms size={25} />
-                <p className="text-gray-600 text-center text-[14px] opacity-80 font-extralight">
-                  Text
-                </p>
-              </div>
-              <div className="btn h-full col-span-2 sm:col-span-1 flex flex-col items-center justify-between gap-2 shadow rounded-2xl text-black text-center font-normal w-full p-4 bg-amber-50">
-                <IoVideocamOutline size={25} />
-                <p className="text-gray-600 text-center text-[14px] opacity-80 font-extralight">
-                  Video
-                </p>
-              </div>
-            </div>
+            <QuickCheckInActions friend={friend} />
           </div>
           <div className="flex flex-col items-start justify-start gap-3 bg-white shadow rounded-2xl p-4 w-full min-h-35">
             {/* Recent Interactions */}
