@@ -4,29 +4,26 @@ import { BiPhoneCall } from "react-icons/bi";
 import { MdOutlineTextsms } from "react-icons/md";
 import { IoVideocamOutline } from "react-icons/io5";
 import { Bounce, toast } from "react-toastify";
-
-const TIMELINE_STORAGE_KEY = "keenKeeperTimelineEvents";
+import { useContext } from "react";
+import { EventContext } from "@/context/EventContext";
 
 const QuickCheckInActions = ({ friend }) => {
-  //   const saveTimelineEvent = (action) => {
-  //     const entry = {
-  //       id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-  //       friendId: friend?.id,
-  //       friendName: friend?.name ?? "Unknown",
-  //       action,
-  //       createdAt: new Date().toISOString(),
-  //     };
+  
+  const { eventsList, setEventsList } = useContext(EventContext);
+  console.log("Current events list:", eventsList);
 
-  //     try {
-  //       const existing = JSON.parse(localStorage.getItem(TIMELINE_STORAGE_KEY) || "[]");
-  //       const next = [entry, ...existing].slice(0, 300);
-  //       localStorage.setItem(TIMELINE_STORAGE_KEY, JSON.stringify(next));
-  //     } catch {
-  //       localStorage.setItem(TIMELINE_STORAGE_KEY, JSON.stringify([entry]));
-  //     }
-  //   };
-  const saveTimelineEvent = () => {
-    console.log("Timeline event saved for friend:", friend?.name);
+
+
+  const saveTimelineEvent = ({ action }) => {
+    console.log("Updated events list:", eventsList);
+    setEventsList([
+      ...eventsList,
+      {
+        action,
+        friendId: friend?.id,
+        date: new Date().toISOString(),
+      },
+    ]);
 
     toast.success("Event saved for " + friend?.name, {
       position: "top-right",
@@ -45,7 +42,7 @@ const QuickCheckInActions = ({ friend }) => {
     <div className="grid grid-cols-2 sm:grid-cols-3 items-center gap-3 w-full">
       <button
         type="button"
-        onClick={() => saveTimelineEvent("Call")}
+        onClick={() => saveTimelineEvent({ action: "Call" })}
         className="btn h-full flex flex-col items-center justify-between gap-2 shadow rounded-2xl text-black text-center font-normal w-full p-4 bg-amber-50"
       >
         <BiPhoneCall size={25} />
@@ -55,7 +52,7 @@ const QuickCheckInActions = ({ friend }) => {
       </button>
       <button
         type="button"
-        onClick={() => saveTimelineEvent("Text")}
+        onClick={() => saveTimelineEvent({ action: "Text" })}
         className="btn h-full flex flex-col items-center justify-between gap-2 shadow rounded-2xl text-black text-center font-normal w-full p-4 bg-amber-50"
       >
         <MdOutlineTextsms size={25} />
@@ -65,7 +62,7 @@ const QuickCheckInActions = ({ friend }) => {
       </button>
       <button
         type="button"
-        onClick={() => saveTimelineEvent("Video")}
+        onClick={() => saveTimelineEvent({ action: "Video" })}
         className="btn h-full col-span-2 sm:col-span-1 flex flex-col items-center justify-between gap-2 shadow rounded-2xl text-black text-center font-normal w-full p-4 bg-amber-50"
       >
         <IoVideocamOutline size={25} />

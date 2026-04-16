@@ -3,6 +3,8 @@ import "./globals.css";
 import NavbarPage from "@/component/Navbar/page";
 import FooterPage from "@/component/Footer/page";
 import ToastProvider from "@/component/ToastProvider/page";
+import Providers from "./lib/Provider";
+import Provider from "./lib/Provider";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -21,14 +23,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en" data-theme="light"
+      lang="en"
+      data-theme="light"
       className={`${geist.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <NavbarPage />
-        {children}
-        <ToastProvider />
-        <FooterPage />
+        <Provider>
+          <NavbarPage />
+          {children}
+          <ToastProvider />
+          <FooterPage />
+        </Provider>
       </body>
     </html>
   );

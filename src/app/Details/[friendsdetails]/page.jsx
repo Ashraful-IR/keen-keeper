@@ -7,6 +7,7 @@ import { BiPhoneCall } from "react-icons/bi";
 import { FaHistory } from "react-icons/fa";
 import { IoVideocamOutline } from "react-icons/io5";
 import QuickCheckInActions from "./QuickCheckInActions";
+import { use, useContext } from "react";
 
 const FriendsDetails = async ({ params }) => {
   const { friendsdetails } = await params;
@@ -21,6 +22,7 @@ const FriendsDetails = async ({ params }) => {
       </div>
     );
   }
+  
 
   return (
     <div className="bg-white flex flex-1 justify-center items-start min-h-full">
