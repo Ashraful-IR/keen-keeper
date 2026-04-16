@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagramSquare, FaTwitter } from "react-icons/fa";
 
 const FooterPage = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-[#1a8862] text-white rounded p-10">
+    <footer className="footer footer-horizontal footer-center bg-[#1a8862] text-white rounded p-10 ">
       <div className="gap-5">
         <h1 className="text-5xl font-bold">KeenKeepr</h1>
         <p

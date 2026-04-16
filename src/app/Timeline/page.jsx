@@ -11,10 +11,12 @@ const TimelinePage = () => {
   const { eventsList } = useContext(EventContext);
 
   return (
-    <div className="flex flex-col flex-1 items-center bg-zinc-50 font-sans text-gray-800">
+    <div className="flex flex-col flex-1 items-center bg-zinc-50 font-sans text-gray-800 h-full">
       <div className="container mx-auto flex w-full flex-col items-start justify-start gap-5 px-4 py-6 sm:gap-8 sm:px-6 sm:py-8 lg:px-8">
         <div className="w-full">
-          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">Timeline</h2>
+          <h2 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
+            Timeline
+          </h2>
         </div>
 
         <div className="container mx-auto flex w-full items-start justify-start">
@@ -78,7 +80,7 @@ const TimelinePage = () => {
                       className="h-9 w-9 rounded-full object-cover sm:h-10 sm:w-10"
                     />
                   </div>
-                  <div className="flex min-w-0 flex-col items-start justify-between gap-2 sm:gap-3">
+                  <div className="flex min-w-0  flex-col items-start justify-between gap-2 sm:gap-3 ">
                     <p className="text-sm text-gray-800 sm:text-base">
                       <span className="text-base font-bold text-emerald-800 sm:text-xl">
                         {event.action}
