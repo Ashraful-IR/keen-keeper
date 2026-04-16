@@ -1,7 +1,7 @@
 "use client";
 import { EventContext } from "@/context/EventContext";
 import friends from "../../../public/friends.json";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
 import text from "@/assets/elements/text.png";
 import video from "@/assets/elements/video.png";
@@ -9,6 +9,14 @@ import call from "@/assets/elements/call.png";
 
 const TimelinePage = () => {
   const { eventsList } = useContext(EventContext);
+  const [selectedAction, setSelectedAction] = useState("all");
+
+  const filteredEvents =
+    selectedAction === "all"
+      ? eventsList
+      : eventsList.filter(
+          (event) => event.action.toLowerCase() === selectedAction,
+        );
 
   return (
     <div className="flex flex-col flex-1 items-center bg-zinc-50 font-sans text-gray-800 h-full">
@@ -23,15 +31,14 @@ const TimelinePage = () => {
           <div className="relative w-full max-w-full sm:max-w-xs">
             <select
               placeholder=""
-              defaultValue=""
+              value={selectedAction}
+              onChange={(event) => setSelectedAction(event.target.value)}
               className="input input-success shadow w-full appearance-none pr-10"
             >
-              <option value="" disabled hidden>
-                Filter timeline
-              </option>
               <option value="all">All</option>
-              <option value="recent">Recent</option>
-              <option value="older">Older</option>
+              <option value="call">Call</option>
+              <option value="text">Text</option>
+              <option value="video">Video</option>
             </select>
             <svg
               className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500"
@@ -49,12 +56,12 @@ const TimelinePage = () => {
         </div>
 
         <div className="container mx-auto mt-2 mb-4 flex w-full flex-col items-start justify-start gap-4 rounded-xl bg-white p-4 shadow sm:mt-4 sm:mb-8 sm:gap-6 sm:p-6">
-          {eventsList.length === 0 ? (
+          {filteredEvents.length === 0 ? (
             <div className="text-gray-500 flex items-center justify-center p-4">
               <p className="text-center">No events to display.</p>
             </div>
           ) : (
-            eventsList.map((event, index) => {
+            filteredEvents.map((event, index) => {
               const friendName =
                 friends.find(
                   (friend) => String(friend.id) === String(event.friendId),
